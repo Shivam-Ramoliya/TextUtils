@@ -1,0 +1,89 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+body {
+  padding-top: 50px;
+}
+
+.theme-toggle {
+  position: relative;
+  width: 60px;
+  height: 32px;
+}
+
+.toggle-checkbox {
+  display: none;
+}
+
+.toggle-label {
+  background-color: #64748b;
+  border-radius: 50px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px;
+  height: 100%;
+  transition: background-color 0.3s ease;
+}
+
+.toggle-label .icon {
+  width: 22px;
+  height: 22px;
+  text-align: center;
+  line-height: 22px;
+  font-size: 16px;
+  color: #fff;
+  opacity: 0;
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.toggle-label .active {
+  opacity: 1;
+  transform: scale(1.2);
+}
+
+.toggle-checkbox:checked+.toggle-label {
+  background-color: #64748b;
+}
+
+/* Custom toggler icon for dark mode */
+.navbar-dark .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(255,255,255,0.9)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22' /%3E%3C/svg%3E");
+}
+
+/* Optional: add hover style for toggler */
+.navbar-toggler:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.accordion-button::after {
+  filter: brightness(5);
+  transition: transform 0.5s ease;
+}
+
+.accordion-button:not(.collapsed)::after {
+  transform: rotate(90deg);
+}
