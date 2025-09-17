@@ -4,7 +4,31 @@ import TextArea from './Components/TextArea';
 import { useRef, useState, useEffect } from 'react';
 import Alert from './Components/Alert';
 import About from './Components/About';
-import { HashRouter as Router, Routes, Route } from "react-router-dom";
+// -> 1. Import useLocation from react-router-dom
+import { HashRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+
+// A new component to handle the title change logic
+function PageTitleUpdater() {
+  // -> 2. Get the location object
+  const location = useLocation();
+
+  // -> 3. Add useEffect to update the title when the location changes
+  useEffect(() => {
+    switch (location.pathname) {
+      case '/':
+        document.title = 'TextUtils - Home';
+        break;
+      case '/about':
+        document.title = 'TextUtils - About';
+        break;
+      default:
+        document.title = 'TextUtils'; // Fallback title
+        break;
+    }
+  }, [location]); // The effect runs every time the location object changes
+
+  return null; // This component does not render anything
+}
 
 function App() {
   const [mode, setMode] = useState('dark');
@@ -29,26 +53,20 @@ function App() {
     }
   };
 
-
   const [alert, setAlert] = useState(null);
   const alertTimeoutRef = useRef(null);
 
   const showAlert = (message, type) => {
     setAlert({ msg: message, type: type });
-
-    // Clear any existing timeout
     if (alertTimeoutRef.current) {
       clearTimeout(alertTimeoutRef.current);
     }
-
-    // Set timeout to dismiss alert
     alertTimeoutRef.current = setTimeout(() => {
       setAlert(null);
       alertTimeoutRef.current = null;
     }, 3000);
   };
 
-  // Cleanup timeout on component unmount
   useEffect(() => {
     return () => {
       if (alertTimeoutRef.current) {
@@ -57,9 +75,10 @@ function App() {
     };
   }, []);
 
-
   return (
     <Router>
+      {/* This component will now handle all title updates */}
+      <PageTitleUpdater />
       <Navbar title="TextUtils" AboutText="About TextUtils" mode={mode} toggleMode={toggleMode} />
       <Alert alert={alert} />
       <div className="container my-3">
