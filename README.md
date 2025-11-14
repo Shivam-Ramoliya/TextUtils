@@ -116,12 +116,6 @@ TextUtils/
 
 <br>
 
-## 📄 License
-
-This project is licensed under the **MIT License** – feel free to use and modify!
-
-<br>
-
 ## 🧑‍🎓 Author
 
 Made with ❤️ by [Shivam S. Ramoliya](https://github.com/Shivam-Ramoliya)
