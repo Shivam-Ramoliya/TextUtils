@@ -92,7 +92,7 @@ export default function About(props) {
                     <li className="mb-2">
                         🌐 GitHub:{" "}
                         <a
-                            href="https://github.com/Shivam-Ramoliya"
+                            href="https://github.com/Shivam-S-Ramoliya/"
                             target="_blank"
                             rel="noopener noreferrer"
                             style={{ color: props.mode === 'dark' ? '#93c5fd' : '#0d47a1' }}
@@ -103,12 +103,12 @@ export default function About(props) {
                     <li className="mb-2">
                         💼 LinkedIn:{" "}
                         <a
-                            href="https://www.linkedin.com/in/ramoliya-shivam-sureshbhai-753265287/"
+                            href="https://www.linkedin.com/in/shivam-s-ramoliya-753265287/"
                             target="_blank"
                             rel="noopener noreferrer"
                             style={{ color: props.mode === 'dark' ? '#93c5fd' : '#0d47a1' }}
                         >
-                            linkedin.com/in/ramoliya-shivam-sureshbhai-753265287
+                            linkedin.com/in/shivam-s-ramoliya-753265287
                         </a>
                     </li>
                     <li>
